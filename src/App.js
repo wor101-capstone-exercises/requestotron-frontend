@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 const baseURL = 'http://requestotron.willrossen.com/'
+//const baseURL = 'http://localhost:4000/'
 
 
 const NewBinButton = ({ binList, setBinList }) => {
@@ -45,6 +46,7 @@ const Request = ({req}) => {
 
     <div>
       <h3>URL {req.url}</h3>
+      <p><b>IP:</b>{JSON.stringify(req.ip)}</p>
       <p><b>Headers:</b>{JSON.stringify(headers)}</p>
       <p><b>Host:</b> {headers.host}</p>
       <p><b>Connection:</b> {headers.connection}</p>
