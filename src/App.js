@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-const baseURL = 'http://requestotron.willrossen.com/'
-//const baseURL = 'http://localhost:4000/'
+//const baseURL = 'http://requestotron.willrossen.com/'
+const baseURL = 'http://localhost:4000/'
 
 
 const NewBinButton = ({ binList, setBinList }) => {
