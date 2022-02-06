@@ -9,8 +9,9 @@ const NewBinButton = ({ binList, setBinList }) => {
     event.preventDefault();
   
     const response = await axios.post(baseURL + 'bin')
-    const binURL = response.data.url
-    setBinList([...binList, binURL])
+    //const binURL = response.data.url
+    const listOfBins = await axios.get(baseURL + 'bin')
+    setBinList(listOfBins)
   }
 
   return (
