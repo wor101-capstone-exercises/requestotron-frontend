@@ -1,17 +1,22 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-//const baseURL = 'http://requestotron.willrossen.com/'
-const baseURL = 'http://localhost:4000/'
+const baseURL = 'http://requestotron.willrossen.com/'
+//const baseURL = 'http://localhost:4000/'
 
 
 const NewBinButton = ({ binList, setBinList }) => {
   const requestNewBin = async (event) => {
     event.preventDefault();
-  
-    const response = await axios.post(baseURL + 'bin')
-    //const binURL = response.data.url
-    const listOfBins = await axios.get(baseURL + 'bin')
-    setBinList(listOfBins)
+
+    const response = await axios.post(baseURL + 'bin');
+    const getResponse = await axios.get(baseURL + 'bin');
+    if (Array.isArray(getResponse.data)) {
+      const urls = getResponse.data.map(urlObj => urlObj.url);    
+      setBinList(urls);
+    } else {
+      setBinList([])
+    }
+
   }
 
   return (
