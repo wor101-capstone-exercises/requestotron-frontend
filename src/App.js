@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import NewBinButton from './components/NewBinButton';
 import ListOfBins from './components/ListOfBins';
 import Requests from './components/Requests';
+import Header from './components/Header';
 import './App.css';
 
 const baseURL = process.env.REACT_APP_NODE_ENV === 'development' 
@@ -30,8 +31,8 @@ function App() {
 
   return (
     <div className="body">
-      <h1 className="header">Requestotron 5000</h1>
-      <NewBinButton className="binList" updateBinList={updateBinList} />
+      <Header />
+      <NewBinButton className="binList" binList={binList} updateBinList={updateBinList} />
       <div className="binSection">
         <ListOfBins binList={binList} setBinContents={setBinContents} />
         <Requests className="requests" binContents={binContents} />

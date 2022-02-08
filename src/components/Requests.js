@@ -7,7 +7,7 @@ const Requests = ({binContents}) => {
   return (
     <ul>
       {binContents.map(req => 
-        <li key={req._id}>
+        <li className="request" key={req._id}>
           <Request req={req}/>
         </li>
         )}
