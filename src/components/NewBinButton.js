@@ -17,7 +17,7 @@ const NewBinButton = ({ updateBinList }) => {
   }
 
   return (
-    <button onClick={requestNewBin}>Request New Bin</button>
+    <button class="button" onClick={requestNewBin}>Request New Bin</button>
   )
 }
 

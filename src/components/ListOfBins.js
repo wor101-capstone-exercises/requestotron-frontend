@@ -3,8 +3,8 @@ import Bin from './Bin';
 const ListOfBins = ({ binList,setBinContents }) => {
   return (
     <div>
-      <h3>Display Bin</h3>
-      <ul>
+      <h3>Available Bins</h3>
+      <ul className="unorderedList">
         {binList.map(bin =>
           <Bin key={bin} bin={bin} setBinContents={setBinContents} />      
         )}

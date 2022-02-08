@@ -18,8 +18,8 @@ const Bin = ({ bin, setBinContents }) => {
   }
 
   return (
-    <li>
-      <button onClick={showBin} value={bin}>bin/{bin}</button>
+    <li className='bin'>
+      <button class="button" onClick={showBin} value={bin}>bin/{bin}</button>
     </li> 
   )
 };
