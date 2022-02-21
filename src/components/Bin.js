@@ -17,9 +17,21 @@ const Bin = ({ bin, setBinContents }) => {
     }
   }
 
+  const copyToClipboard = async (event) => {
+    const text = baseURL + 'bin/' + bin;
+    navigator.clipboard.writeText(text)
+      .then(response => {
+        console.log('Copied to clipboard')
+      })
+      .catch(err => {
+        console.log('Error copying to clipboard')
+      });
+  };
+
   return (
     <li className='bin'>
-      <button class="button" onClick={showBin} value={bin}>bin/{bin}</button>
+      <button className="button" onClick={showBin} value={bin}>bin/{bin}</button>
+      <i className="fa fa-copy copy-icon" onClick={copyToClipboard}></i>
     </li> 
   )
 };

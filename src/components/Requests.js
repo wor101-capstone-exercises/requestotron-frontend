@@ -5,7 +5,7 @@ const Requests = ({binContents}) => {
   binContents.forEach(request => console.log(request))
 
   return (
-    <ul>
+    <ul className='requests unorderedList'>
       {binContents.map(req => 
         <li className="request" key={req._id}>
           <Request req={req}/>

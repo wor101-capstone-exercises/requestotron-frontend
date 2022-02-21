@@ -2,7 +2,7 @@ import Bin from './Bin';
 
 const ListOfBins = ({ binList,setBinContents }) => {
   return (
-    <div>
+    <div className="bins">
       <h3>Available Bins</h3>
       <ul className="unorderedList">
         {binList.map(bin =>
