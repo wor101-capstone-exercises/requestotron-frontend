@@ -35,6 +35,11 @@ html {
   cursor: pointer;
 }
 
+.copy-icon:active {
+  color: lightgreen;
+  transform: translateY(4px);
+}
+
 .header {
   grid-area: header;
   display: grid;

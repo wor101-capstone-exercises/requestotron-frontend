@@ -18,11 +18,14 @@ const Bin = ({ bin, setBinContents }) => {
   }
 
   const copyToClipboard = async (event) => {
+    event.preventDefault();
     const text = baseURL + 'bin/' + bin;
+    console.log('clipboard: ',text)
     navigator.clipboard.writeText(text)
       .then(response => {
         console.log('Copied to clipboard')
-      })
+       })
+      .then(clip => console.log(clip))
       .catch(err => {
         console.log('Error copying to clipboard')
       });
